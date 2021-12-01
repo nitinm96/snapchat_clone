@@ -10,3 +10,9 @@
     cursor: pointer;
     color: white;
 }
+
+.webcamCapture__button:hover{
+    transition: 0.35s;
+    transition-timing-function: ease-in-out;
+    opacity: 50%;
+}
