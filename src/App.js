@@ -6,6 +6,7 @@ function App() {
   return (
     <div className="App">
       <h1>Lets Build Snapchat!</h1>
+      <h2>Test</h2>
       <WebcamCapture  />
     </div>
   );
