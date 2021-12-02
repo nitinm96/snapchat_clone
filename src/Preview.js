@@ -10,12 +10,19 @@ import CropOutlinedIcon from '@mui/icons-material/CropOutlined';
 import AudiotrackRoundedIcon from '@mui/icons-material/AudiotrackRounded';
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import "./style/Preview.css";
+import { v4 as uuid } from "uuid";
+import { db, storage } from "./firebase";
+import firebase from "firebase";
+
+
+
 
 
 function Preview(){
     const cameraImage = useSelector(selectCameraImage);
     const history = useHistory();
     const dispatch = useDispatch();
+    
 
     useEffect (() => {
         if (!cameraImage){
@@ -27,6 +34,33 @@ function Preview(){
         dispatch(resetCameraImage());
         history.replace('/');
     }
+
+    const sendPost = () =>{
+        const id = uuid();
+        const uploadTask = storage.ref(`post/${id}`).putString(cameraImage, "data_url");
+
+        uploadTask.on('state_changed', 
+        null, 
+        //Error if anything happens.
+        (error) => {
+            console.log(error)
+        }, 
+        //On Complete function.
+        () => {
+            storage.ref('posts').child(id).getDownloadURL().then((url) =>{
+
+                db.collection('posts').add({
+                    imageUrl : url,
+                    username: 'Nitin Minhas',
+                    read: false,
+                    //profilePic
+                    timeStamp: firebase.firestore.FieldValue.serverTimestamp(),
+
+                });
+                history.replace('/chats');
+            });
+        });
+    };
 
     return(
         <div className = "preview">
@@ -43,8 +77,8 @@ function Preview(){
 
             <img src = {cameraImage} alt = "noImg"/>
 
-            <div className = "preview__footer">
-             <h3>Send</h3>   
+            <div onClick = {sendPost}  className = "preview__footer">
+             <h3>Send To</h3>   
              <SendRoundedIcon className = "send__icon" />
 
             </div>

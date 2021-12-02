@@ -31,15 +31,12 @@ function WebcamCapture(){
             screenshotFormat = "image/jpeg"
             width={videoConstraints.width}
             videoConstraints={videoConstraints}
-            
           />  
           <RadioButtonUncheckedIcon 
             className = 'webcamCapture__button'
             onClick={capture}
             fontSize = "large"
           />
-
-        
         </div>
     );
 };

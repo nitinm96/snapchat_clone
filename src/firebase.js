@@ -1,4 +1,6 @@
-import firebase from 'firebase';
+import firebase from "firebase";
+
+
 const firebaseConfig = {
     apiKey: "AIzaSyC9eJkQDKsCsOjBql0wOf1SXiPSiVO78Gg",
     authDomain: "snapchat-clone-56064.firebaseapp.com",
