@@ -13,15 +13,15 @@ import "./style/Preview.css";
 import { v4 as uuid } from "uuid";
 import { db, storage } from "./firebase";
 import firebase from "firebase";
-
-
-
+import { selectUser } from "./features/appSlice";
 
 
 function Preview(){
     const cameraImage = useSelector(selectCameraImage);
     const history = useHistory();
     const dispatch = useDispatch();
+    const user = useSelector(selectUser);
+
     
 
     useEffect (() => {
@@ -30,30 +30,36 @@ function Preview(){
         }
     }, [cameraImage, history])
 
-    const closePreview = () =>{
+    const closePreview = () => {
         dispatch(resetCameraImage());
-        history.replace('/');
     }
 
     const sendPost = () =>{
         const id = uuid();
-        const uploadTask = storage.ref(`post/${id}`).putString(cameraImage, "data_url");
+        const uploadTask = storage
+        .ref(`posts/${id}`)
+        .putString(cameraImage, "data_url");
 
-        uploadTask.on('state_changed', 
-        null, 
-        //Error if anything happens.
-        (error) => {
-            console.log(error)
+        uploadTask.on(
+            "state_changed", 
+            null, 
+            //Error if anything happens.
+            (error) => {
+            console.log(error);
         }, 
         //On Complete function.
         () => {
-            storage.ref('posts').child(id).getDownloadURL().then((url) =>{
+            storage
+            .ref('posts')
+            .child(id)
+            .getDownloadURL()
+            .then((url) =>{
 
                 db.collection('posts').add({
                     imageUrl : url,
-                    username: 'Nitin Minhas',
+                    username: user.username,
                     read: false,
-                    //profilePic
+                    profilePic: user.profilePic,
                     timeStamp: firebase.firestore.FieldValue.serverTimestamp(),
 
                 });
@@ -73,15 +79,12 @@ function Preview(){
                 <CropOutlinedIcon      className = "crop__icon"  />           
                 <AudiotrackRoundedIcon className = "music__icon" />           
             </div>
-
-
-            <img src = {cameraImage} alt = "noImg"/>
-
+            
             <div onClick = {sendPost}  className = "preview__footer">
-             <h3>Send To</h3>   
-             <SendRoundedIcon className = "send__icon" />
-
+                <h3>Send To</h3>   
+                <SendRoundedIcon fontSize = "small" className = "send__icon" />
             </div>
+            <img src = {cameraImage} alt = "noImg"/>
         </div>
     )
     

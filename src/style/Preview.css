@@ -13,7 +13,7 @@
 .close__icon:hover{
     transition: 0.35s;
     transition-timing-function: ease-in-out;
-    opacity: 50%;
+    opacity: 0.8;
 
 }
 .icon__toolbarRight{
@@ -36,7 +36,7 @@
 .text__icon:hover, .create__icon:hover, .timer__icon:hover, .crop__icon:hover, .music__icon:hover{
     transition: 0.35s;
     transition-timing-function: ease-in-out;
-    opacity: 50%;
+    opacity: 0.8;
 }
 
 .preview__footer{
@@ -44,8 +44,7 @@
     bottom: 7px;
     right: -10px;
     transform: translate(-50%, -50%);
-    background-color: #fff600;
-    opacity: 75%;
+    background-color: #feff00;
     color:black;
     display: flex;
     justify-content: space-evenly;
@@ -65,7 +64,7 @@
 .preview__footer:hover{
     transition: 0.35s;
     transition-timing-function: ease-in-out;
-    opacity:100%;
+    opacity:0.8;
 }
 
 
