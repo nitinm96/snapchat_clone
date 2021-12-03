@@ -12,6 +12,8 @@
     padding-right: 10px;
     background-color: #059ee0;
     height: 50px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
 }
 .chats__search > input{
     outline: none;
@@ -31,10 +33,12 @@
 }
 .chats__posts{
     box-shadow: 1px -7px 7px -6px rgba(0, 0, 0, 0.44);
-    height:359px;
+    height:407px;
     margin-top: -9px;
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
     background-color: white;
     overflow: scroll;
 }

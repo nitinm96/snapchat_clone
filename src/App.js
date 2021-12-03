@@ -41,8 +41,7 @@ function App() {
           <Login />
         ) : (
           <>
-          <img src ="https://lakeridgenewsonline.com/wp-content/uploads/2020/04/snapchat.jpg" alt="snapchat_logo" />
-
+          <img className = 'snap__logo' src ="https://lakeridgenewsonline.com/wp-content/uploads/2020/04/snapchat.jpg" alt="snapchat_logo" /> 
           <div className = "app__body">
             <div className="app__bodyBackground">
               <Switch>

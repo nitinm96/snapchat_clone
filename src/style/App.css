@@ -6,17 +6,18 @@
     background-color: #feff00;
     height: 100vh;
 }
-.app > img{
+.snap__logo{
     height: 100px;
 }
 .app__bodyBackground{
     background-color: white;
-    height: 400px;
+    height: 450px;
 }
+
 .app__body{
-    background: url("./iphone.png") no-repeat contain;
-    background-size: contain;
-    height:400px !important;
-    width: 250px !important;
-    
+    background:url('./iphone.png') no-repeat center; 
+    height: 420px;
+    padding: 105px;
+    padding-left: 103px;
+    padding-top:68px;
 }

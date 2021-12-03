@@ -13,7 +13,7 @@ import { Avatar } from "@mui/material";
 
 const videoConstraints = {
     width: 250,
-    height: 400,
+    height: 450,
     facingMode: "user",
 };
 

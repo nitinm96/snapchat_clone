@@ -3,6 +3,7 @@
 }
 .capture__header{
     position: absolute;
+    
 }
 .capture__avatar{
     margin:10px; 
@@ -44,13 +45,13 @@
 .emote__button{
     position: absolute;
     background-color: transparent;
-    bottom: 15.5px;
+    bottom: 15px;
     left: 66%;
     transform: translate(-50%, -50%);
     width: 300px;
     color:white;
     cursor:pointer;
-    font-size: 18px !important;
+    font-size: 19px !important;
     opacity: 0.9;
 }
 
