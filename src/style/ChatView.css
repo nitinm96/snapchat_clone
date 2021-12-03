@@ -11,3 +11,7 @@
     right: 0;
     margin: 10px;
 }
+.view__body{
+    background-color: white;
+    height: 400px;
+}

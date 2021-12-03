@@ -36,9 +36,7 @@ function Chat({ id, username ,profilePic, timeStamp, imageUrl, read }) {
                 <ReactTimeago date = {new Date(timeStamp?.toDate()).toUTCString()}/></p>
             
             </div>
-        {!read && <SquareRoundedIcon className = "sq__icon"
-            fontSize="small"
-        /> }  
+        {!read && <SquareRoundedIcon className = "sq__icon"/> }  
         </div>
 
     );

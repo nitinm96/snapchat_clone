@@ -62,11 +62,14 @@
     padding-left: 8px;
     font-size: 20px;
 }
-.bubble__icon, .search__icon{
+.camera__icon,.search__icon{
+    cursor: pointer;
     font-size: 20px !important;
 }
-.bubble__icon{
-    margin-right: 10px;
+.camera__icon:hover{
+    transition: 0.35s;
+    transition-timing-function: ease-in-out;
+    opacity: 0.8;
 }
 
 .chats_takePicIcon{

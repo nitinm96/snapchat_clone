@@ -13,3 +13,10 @@
     background-color: white;
     height: 400px;
 }
+.app__body{
+    background: url("./iphone.png") no-repeat contain;
+    background-size: contain;
+    height:400px !important;
+    width: 250px !important;
+    
+}

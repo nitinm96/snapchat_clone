@@ -81,7 +81,7 @@ function Preview(){
             </div>
             
             <div onClick = {sendPost}  className = "preview__footer">
-                <h3>Send To</h3>   
+                <h3>Send</h3>   
                 <SendRoundedIcon fontSize = "small" className = "send__icon" />
             </div>
             <img src = {cameraImage} alt = "noImg"/>

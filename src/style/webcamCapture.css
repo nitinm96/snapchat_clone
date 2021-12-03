@@ -1,6 +1,14 @@
 .webcamCapture{
     position:relative;
 }
+.capture__header{
+    position: absolute;
+}
+.capture__avatar{
+    margin:10px; 
+    height:25px !important;
+    width: 25px !important;
+}
 
 .webcamCapture__button{
     position:absolute;
@@ -16,3 +24,39 @@
     transition-timing-function: ease-in-out;
     opacity: 0.8;
 }
+.chat__ViewButton{
+    position: absolute;
+    background-color: transparent;
+    bottom: 16px;
+    left: 34%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    color:white;
+    cursor:pointer;
+    font-size: 17px !important;
+    opacity: 0.9;
+}
+.chat__ViewButton:hover{
+    transition: 0.35s;
+    transition-timing-function: ease-in-out;
+    opacity: 0.7;
+}
+.emote__button{
+    position: absolute;
+    background-color: transparent;
+    bottom: 15.5px;
+    left: 66%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    color:white;
+    cursor:pointer;
+    font-size: 18px !important;
+    opacity: 0.9;
+}
+
+.emote__button:hover{
+    transition: 0.35s;
+    transition-timing-function: ease-in-out;
+    opacity: 0.7;
+}
+

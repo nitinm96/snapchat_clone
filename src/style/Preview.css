@@ -49,17 +49,26 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    border-radius: 20px;
+    border-radius: 15px;
     width: 45px;
+    height:10px;
     padding: 7px;
     cursor: pointer;
 }
 .preview__footer > h3{
-    font-size: 8px;
-    margin-right: 3px;
+    position:relative;
+
+    font-size: 10px;
+    margin-right: 20px;
+
 }
 .send__icon{
-    font-size: 10px !important;
+    position:absolute;
+    font-size: 12px !important;
+    margin-top: 3px;
+    margin-left: 26px;
+
+
 }
 .preview__footer:hover{
     transition: 0.35s;

@@ -7,9 +7,9 @@ import { db, auth } from './firebase';
 import Chat from './Chat';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUser } from './features/appSlice';
-import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
 import { useHistory } from 'react-router';
 import { resetCameraImage } from './features/cameraSlice';
+import CameraAltOutlinedIcon from '@mui/icons-material/CameraAltOutlined';
 
 
 
@@ -49,7 +49,11 @@ function Chats() {
                 <div className = "chats__search">
                     <SearchRoundedIcon className="search__icon" />
                     <input placeholder = "Friends" type= "text" />
-                    <ChatBubbleIcon className = "bubble__icon"/>
+                    <CameraAltOutlinedIcon 
+                    className = "camera__icon"
+                    onClick = {takeSnap}
+                    fontSize="medium"
+                    />
                 </div>
             </div>
 
@@ -71,12 +75,6 @@ function Chats() {
                 )
                 )}
             </div>
-            
-            <RadioButtonUncheckedIcon
-                className = 'chats_takePicIcon'
-                onClick = {takeSnap}
-                fontSize="large"
-            />
         </div>
         
     );
